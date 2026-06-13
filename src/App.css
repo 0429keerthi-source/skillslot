@@ -6,17 +6,45 @@
   padding: 0;
 }
 
-body {
+html, body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background: #f8f8f8;
   -webkit-font-smoothing: antialiased;
 }
 
-/* Make app feel like a mobile app on desktop */
+/* Desktop: show app as a centered "phone" with backdrop.
+   Mobile: app takes the full screen, no backdrop. */
+body {
+  background: #f8f8f8;
+}
+
 #root {
-  max-width: 420px;
-  margin: 0 auto;
   min-height: 100vh;
-  background: white;
-  box-shadow: 0 0 40px rgba(0,0,0,0.08);
+}
+
+/* On wider screens, frame the app like a phone */
+@media (min-width: 481px) {
+  body {
+    background: #e8e8ec;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+  }
+
+  #root {
+    max-width: 420px;
+    width: 100%;
+    min-height: 100vh;
+    background: white;
+    box-shadow: 0 0 40px rgba(0,0,0,0.12);
+  }
+}
+
+/* On phones, let the app use the entire viewport */
+@media (max-width: 480px) {
+  #root {
+    max-width: 100%;
+    width: 100%;
+    background: white;
+  }
 }
