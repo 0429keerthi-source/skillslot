@@ -1,0 +1,106 @@
+/* RoleSelectScreen.css */
+
+.role-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 60px 24px 40px;
+  background: white;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.role-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 40px;
+}
+
+.logo-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #1D9E75;
+}
+
+.role-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+.role-sub {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.role-card {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 16px;
+  border: 1px solid #eee;
+  border-radius: 14px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: all 0.15s;
+  background: white;
+}
+
+.role-card:hover {
+  border-color: #1D9E75;
+  background: #f9fffe;
+}
+
+.role-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.role-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 3px;
+}
+
+.role-desc {
+  font-size: 12px;
+  color: #888;
+  line-height: 1.4;
+}
+
+.role-arrow {
+  font-size: 22px;
+  color: #ccc;
+  margin-left: auto;
+}
+
+.role-login {
+  margin-top: 28px;
+  font-size: 13px;
+  color: #888;
+  text-align: center;
+}
+
+.role-login span {
+  color: #1D9E75;
+  cursor: pointer;
+  font-weight: 500;
+}

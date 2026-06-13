@@ -1,0 +1,178 @@
+/* StartupSignupScreen.css */
+
+.startup-signup-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: white;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.ss-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.back-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  background: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.logo-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #1D9E75;
+}
+
+.steps {
+  display: flex;
+  gap: 6px;
+  padding: 20px 16px 0;
+}
+
+.step {
+  flex: 1;
+  height: 3px;
+  border-radius: 99px;
+  background: #f0f0f0;
+}
+
+.step.active { background: #534AB7; }
+
+.ss-body {
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+.ss-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #EEEDFE;
+  color: #3C3489;
+  border-radius: 99px;
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  width: fit-content;
+}
+
+.ss-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 4px;
+}
+
+.ss-sub {
+  font-size: 13px;
+  color: #888;
+  margin: 0 0 20px;
+}
+
+.field { margin-bottom: 14px; }
+
+.field label {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  color: #666;
+  margin-bottom: 6px;
+}
+
+.field input, .field select {
+  width: 100%;
+  padding: 11px 13px;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+  font-size: 14px;
+  color: #1a1a1a;
+  outline: none;
+  transition: border 0.15s;
+  font-family: inherit;
+  box-sizing: border-box;
+  background: white;
+}
+
+.field input:focus, .field select:focus { border-color: #534AB7; }
+
+.skill-prompt {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 12px;
+}
+
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.skill-opt {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.skill-opt.sel {
+  border-color: #534AB7;
+  background: #EEEDFE;
+}
+
+.skill-emoji { font-size: 16px; }
+.skill-label { font-size: 12px; font-weight: 500; color: #1a1a1a; }
+
+.error-msg {
+  font-size: 13px;
+  color: #E24B4A;
+  background: #FEF2F2;
+  padding: 10px 12px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: none;
+  background: #534AB7;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+  margin-top: 8px;
+}
+
+.btn-primary:hover { background: #3C3489; }
+.btn-primary:disabled { background: #A9A5D9; cursor: not-allowed; }
