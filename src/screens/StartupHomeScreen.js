@@ -13,6 +13,7 @@ function StartupHomeScreen() {
   const [startup, setStartup] = useState(null);
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [showMenu, setShowMenu] = useState(false);
 
   useEffect(() => {
     const loadStartup = async () => {
@@ -66,7 +67,33 @@ function StartupHomeScreen() {
         </div>
         <div style={{display:"flex", gap:"8px", alignItems:"center"}}>
           <div className="startup-badge">🏢 Startup</div>
-          <button className="icon-btn" onClick={handleLogout}>⚙️</button>
+          <div style={{position:"relative"}}>
+            <button className="icon-btn" onClick={() => setShowMenu(!showMenu)}>⚙️</button>
+            {showMenu && (
+              <>
+                <div
+                  style={{position:"fixed", inset:0, zIndex:99}}
+                  onClick={() => setShowMenu(false)}
+                />
+                <div className="settings-menu">
+                  <div className="settings-menu-header">
+                    <div className="settings-name">{startup?.companyName || "Startup"}</div>
+                    <div className="settings-email">{auth.currentUser?.email}</div>
+                  </div>
+                  <button className="settings-item" onClick={() => { setShowMenu(false); navigate("/startup/post-project"); }}>
+                    ➕ Post a project
+                  </button>
+                  <button className="settings-item" onClick={() => { setShowMenu(false); navigate("/startup/applications"); }}>
+                    📋 View applications
+                  </button>
+                  <div className="settings-divider" />
+                  <button className="settings-item danger" onClick={handleLogout}>
+                    🚪 Sign out
+                  </button>
+                </div>
+              </>
+            )}
+          </div>
         </div>
       </div>
 

@@ -88,7 +88,7 @@ function App() {
           <Route path="/gig-success" element={<GigSuccessScreen />} />
           <Route path="/marketplace" element={<MarketplaceScreen />} />
           <Route path="/projects" element={<ProjectsListScreen />} /> 
-          <Route path="/my-applications" element={<MyApplicationsScreen />} />npm  
+          <Route path="/my-applications" element={<MyApplicationsScreen />} /> 
           {/* Startup flow */}
           <Route path="/signup/startup" element={<StartupSignupScreen />} />
           <Route path="/startup/home" element={<StartupHomeScreen />} />

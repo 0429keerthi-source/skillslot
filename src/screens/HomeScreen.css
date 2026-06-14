@@ -279,3 +279,59 @@
 
 .nav-btn span:first-child { font-size: 20px; }
 .nav-btn.active { color: #1D9E75; }
+
+/* Settings dropdown menu */
+.settings-menu {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  border: 1px solid #f0f0f0;
+  min-width: 200px;
+  z-index: 100;
+  overflow: hidden;
+}
+
+.settings-menu-header {
+  padding: 12px 14px;
+  border-bottom: 1px solid #f0f0f0;
+  background: #f8f8f8;
+}
+
+.settings-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.settings-email {
+  font-size: 11px;
+  color: #888;
+  margin-top: 2px;
+}
+
+.settings-item {
+  display: block;
+  width: 100%;
+  padding: 11px 14px;
+  text-align: left;
+  background: none;
+  border: none;
+  font-size: 13px;
+  color: #1a1a1a;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s;
+}
+
+.settings-item:hover { background: #f5f5f5; }
+.settings-item.danger { color: #E24B4A; }
+.settings-item.danger:hover { background: #FEF2F2; }
+
+.settings-divider {
+  height: 1px;
+  background: #f0f0f0;
+  margin: 2px 0;
+}
