@@ -1,6 +1,7 @@
 // SplashScreen.js
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import Logo from "./Logo";
 import "./SplashScreen.css";
 
 function SplashScreen() {
@@ -10,8 +11,7 @@ function SplashScreen() {
     <div className="splash-container">
 
       <div className="splash-logo">
-        <div className="logo-dot"></div>
-        <span className="logo-text">SkillSlot</span>
+        <Logo size="lg" />
       </div>
 
       <p className="splash-tagline">

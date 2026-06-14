@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { doc, getDoc } from "firebase/firestore";
 import { auth, db } from "../firebase/config";
+import Logo from "./Logo";
 import "./SignupScreen.css";
 
 function LoginScreen() {
@@ -67,8 +68,7 @@ function LoginScreen() {
       <div className="signup-header">
         <button className="back-btn" onClick={() => navigate("/")}>←</button>
         <div className="header-logo">
-          <div className="logo-dot"></div>
-          <span>SkillSlot</span>
+          <Logo size="sm" />
         </div>
       </div>
 

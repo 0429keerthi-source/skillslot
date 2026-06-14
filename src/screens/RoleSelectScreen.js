@@ -1,6 +1,7 @@
 // RoleSelectScreen.js
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import Logo from "./Logo";
 import "./RoleSelectScreen.css";
 
 function RoleSelectScreen() {
@@ -10,8 +11,7 @@ function RoleSelectScreen() {
     <div className="role-container">
 
       <div className="role-logo">
-        <div className="logo-dot"></div>
-        <span>SkillSlot</span>
+        <Logo size="md" />
       </div>
 
       <h2 className="role-title">Who are you?</h2>

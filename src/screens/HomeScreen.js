@@ -4,13 +4,13 @@ import { useNavigate } from "react-router-dom";
 import { auth, db } from "../firebase/config";
 import { doc, getDoc } from "firebase/firestore";
 import { signOut, onAuthStateChanged } from "firebase/auth";
+import Logo from "./Logo";
 import "./HomeScreen.css";
 
 function HomeScreen() {
   const navigate = useNavigate();
   const [student, setStudent] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [showMenu, setShowMenu] = useState(false);
 
   useEffect(() => {
     // Wait for Firebase to confirm login status
@@ -56,38 +56,11 @@ function HomeScreen() {
     <div className="home-container">
       <div className="home-topbar">
         <div className="header-logo">
-          <div className="logo-dot"></div>
-          <span>SkillSlot</span>
+          <Logo size="sm" />
         </div>
         <div style={{display:"flex", gap:"8px", alignItems:"center"}}>
           <div className="coin-badge">🪙 {student?.skillCoins || 200}</div>
-          <div style={{position:"relative"}}>
-            <button className="icon-btn" onClick={() => setShowMenu(!showMenu)} title="Settings">⚙️</button>
-            {showMenu && (
-              <>
-                <div
-                  style={{position:"fixed", inset:0, zIndex:99}}
-                  onClick={() => setShowMenu(false)}
-                />
-                <div className="settings-menu">
-                  <div className="settings-menu-header">
-                    <div className="settings-name">{student?.name || "Student"}</div>
-                    <div className="settings-email">{auth.currentUser?.email}</div>
-                  </div>
-                  <button className="settings-item" onClick={() => { setShowMenu(false); navigate("/post-gig"); }}>
-                    ➕ Post a gig
-                  </button>
-                  <button className="settings-item" onClick={() => { setShowMenu(false); navigate("/my-applications"); }}>
-                    📋 My applications
-                  </button>
-                  <div className="settings-divider" />
-                  <button className="settings-item danger" onClick={handleLogout}>
-                    🚪 Sign out
-                  </button>
-                </div>
-              </>
-            )}
-          </div>
+          <button className="icon-btn" onClick={handleLogout} title="Sign out">⚙️</button>
         </div>
       </div>
 

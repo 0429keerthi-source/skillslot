@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { auth, db } from "../firebase/config";
 import { doc, getDoc, collection, query, where, getDocs, orderBy } from "firebase/firestore";
 import { signOut } from "firebase/auth";
+import Logo from "./Logo";
 import "./StartupHomeScreen.css";
 
 function StartupHomeScreen() {
@@ -13,7 +14,6 @@ function StartupHomeScreen() {
   const [startup, setStartup] = useState(null);
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [showMenu, setShowMenu] = useState(false);
 
   useEffect(() => {
     const loadStartup = async () => {
@@ -62,38 +62,11 @@ function StartupHomeScreen() {
       {/* Top bar */}
       <div className="sh-topbar">
         <div className="header-logo">
-          <div className="logo-dot"></div>
-          <span>SkillSlot</span>
+          <Logo size="sm" />
         </div>
         <div style={{display:"flex", gap:"8px", alignItems:"center"}}>
           <div className="startup-badge">🏢 Startup</div>
-          <div style={{position:"relative"}}>
-            <button className="icon-btn" onClick={() => setShowMenu(!showMenu)}>⚙️</button>
-            {showMenu && (
-              <>
-                <div
-                  style={{position:"fixed", inset:0, zIndex:99}}
-                  onClick={() => setShowMenu(false)}
-                />
-                <div className="settings-menu">
-                  <div className="settings-menu-header">
-                    <div className="settings-name">{startup?.companyName || "Startup"}</div>
-                    <div className="settings-email">{auth.currentUser?.email}</div>
-                  </div>
-                  <button className="settings-item" onClick={() => { setShowMenu(false); navigate("/startup/post-project"); }}>
-                    ➕ Post a project
-                  </button>
-                  <button className="settings-item" onClick={() => { setShowMenu(false); navigate("/startup/applications"); }}>
-                    📋 View applications
-                  </button>
-                  <div className="settings-divider" />
-                  <button className="settings-item danger" onClick={handleLogout}>
-                    🚪 Sign out
-                  </button>
-                </div>
-              </>
-            )}
-          </div>
+          <button className="icon-btn" onClick={handleLogout}>⚙️</button>
         </div>
       </div>
 
